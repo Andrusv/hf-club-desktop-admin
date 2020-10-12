@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace hf_club_desktop_admin
 {
-    public partial class Form1 : Form
+    public partial class HFD_Inicio : Form
     {
-        public Form1()
+        public HFD_Inicio()
         {
             InitializeComponent();
+        }
+
+        private void HFD_Inicio_Load(object sender, EventArgs e)
+        {
         }
     }
 }
