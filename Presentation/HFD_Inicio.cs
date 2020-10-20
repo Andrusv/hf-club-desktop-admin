@@ -23,6 +23,8 @@ namespace hf_club_desktop_admin
         private Users users = new Users();
         private User usuario = new User();
 
+        private readonly String apiKeyToken = "7ed9b7682df930a86c38b2e0e70e9ad263508ccdcc7f8c103e154e85dde50667";
+
         private void HFD_Inicio_Load(object sender, EventArgs e)
         {
         }
@@ -115,7 +117,7 @@ namespace hf_club_desktop_admin
 
             usuario.username = txtuser.Text;
             usuario.password = txtpassword.Text;
-            usuario.apiKeyToken = "7ed9b7682df930a86c38b2e0e70e9ad263508ccdcc7f8c103e154e85dde50667";
+            usuario.apiKeyToken = apiKeyToken;
 
             MessageBox.Show(await users.loginAdminAsync(usuario));
         }

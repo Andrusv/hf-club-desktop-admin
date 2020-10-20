@@ -1,8 +1,10 @@
-﻿using RestSharp.Serialization;
+﻿using DataAccess.objects;
+using RestSharp.Serialization;
 using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace DataAccess
 {
@@ -42,7 +44,7 @@ namespace DataAccess
             }
         }
 
-        public static async Task<String> loginAdmin(String username, String password, String token)
+        public static async Task<LoginResponse> loginAdmin(String username, String password, String token)
         {
             try
             {
@@ -66,11 +68,14 @@ namespace DataAccess
 
                 var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-                return responseBody.ToString();
+                return JsonConvert.DeserializeObject<LoginResponse>(responseBody);
             }
             catch (HttpRequestException e)
             {
-                return e.Message.ToString();
+                LoginResponse loginResponse = new LoginResponse();
+                loginResponse.error = "Usuario o contrasena incorrecta!";
+
+                return loginResponse;
             }
         }
     }
