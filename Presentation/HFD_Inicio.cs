@@ -21,7 +21,7 @@ namespace hf_club_desktop_admin
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private Users users = new Users();
-        private User superusuario = new User();
+        private User usuario = new User();
 
         private void HFD_Inicio_Load(object sender, EventArgs e)
         {
@@ -113,13 +113,11 @@ namespace hf_club_desktop_admin
 
             lblErrorMessage.Visible = false;
 
-            superusuario.username = txtuser.Text;
-            superusuario.password = txtpassword.Text;
-            superusuario.apiKeyToken = "dafdsfa";
+            usuario.username = txtuser.Text;
+            usuario.password = txtpassword.Text;
+            usuario.apiKeyToken = "7ed9b7682df930a86c38b2e0e70e9ad263508ccdcc7f8c103e154e85dde50667";
 
-           var usuario = JsonConvert.SerializeObject(superusuario);
-
-            MessageBox.Show(await users.getAResponseAsync(usuario));
+            MessageBox.Show(await users.loginAdminAsync(usuario));
         }
 
         private void msgError(String msg)
