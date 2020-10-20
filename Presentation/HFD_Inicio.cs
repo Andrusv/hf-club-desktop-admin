@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Domain;
+using Domain.objects;
+using Newtonsoft.Json;
 
 namespace hf_club_desktop_admin
 {
@@ -23,6 +20,8 @@ namespace hf_club_desktop_admin
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        private Users users = new Users();
+        private User superusuario = new User();
 
         private void HFD_Inicio_Load(object sender, EventArgs e)
         {
@@ -92,6 +91,41 @@ namespace hf_club_desktop_admin
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private async void btnlogin_ClickAsync(object sender, EventArgs e)
+        {
+            if (txtuser.Text == "CORREO ELECTRÓNICO" || txtuser.Text == "")
+            {
+                this.msgError("El campo de correo electrónico no puede estar vacío");
+                txtuser.Select();
+
+                return;
+            }
+
+            if (txtpassword.Text == "CONTRASEÑA" || txtpassword.Text == "")
+            {
+                this.msgError("El campo de contraseña no puede estar vacío");
+                txtpassword.Select();
+
+                return;
+            }
+
+            lblErrorMessage.Visible = false;
+
+            superusuario.username = txtuser.Text;
+            superusuario.password = txtpassword.Text;
+            superusuario.apiKeyToken = "dafdsfa";
+
+           var usuario = JsonConvert.SerializeObject(superusuario);
+
+            MessageBox.Show(await users.getAResponseAsync(usuario));
+        }
+
+        private void msgError(String msg)
+        {
+            lblErrorMessage.Text = "      " + msg;
+            lblErrorMessage.Visible = true;
         }
     }
 }

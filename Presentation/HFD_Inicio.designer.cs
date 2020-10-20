@@ -41,6 +41,7 @@
             this.linkpass = new System.Windows.Forms.LinkLabel();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.PictureBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
@@ -154,6 +155,7 @@
             this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "ACCEDER";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_ClickAsync);
             // 
             // linkpass
             // 
@@ -190,12 +192,28 @@
             this.btnminimize.TabStop = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("lblErrorMessage.Image")));
+            this.lblErrorMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorMessage.Location = new System.Drawing.Point(311, 212);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(95, 17);
+            this.lblErrorMessage.TabIndex = 9;
+            this.lblErrorMessage.Text = "Error Message";
+            this.lblErrorMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblErrorMessage.Visible = false;
+            // 
             // HFD_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.linkpass);
@@ -235,6 +253,7 @@
         private System.Windows.Forms.PictureBox btnclose;
         private System.Windows.Forms.PictureBox btnminimize;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hf_club_desktop_admin
+namespace Presentation
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace hf_club_desktop_admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HFD_Inicio());
+            Application.Run(new hf_club_desktop_admin.HFD_Inicio());
         }
     }
 }

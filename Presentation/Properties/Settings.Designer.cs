@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hf_club_desktop_admin.Properties
+namespace Presentation.Properties
 {
 
 

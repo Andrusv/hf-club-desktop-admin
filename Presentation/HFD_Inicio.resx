@@ -181,4 +181,18 @@
         QmCC
 </value>
   </data>
+  <data name="lblErrorMessage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AoNEgUMkrj8OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF6SURBVDhP
+        jZPNLkNRFIWXnyCGHkBrZIAHIN5AwhtgJlFDU8+g2pIw9hj1MzIRJlqT3iqRGEk9At8+3XZuewesZOee
+        vdY6+5x9zj0aRVdaeZVqPalNfHnYuJpJy24roi1NvUinGDMK7PMtuyT4knMZ44Z5XRrACMQr4rwg5tCR
+        ps1DkeaQD/LMBE8TvqUxjIfE0Y006XSCedlRPSXec2d0Zfh1+HvM18SW0wm+kyydCaaa9edaAG6D1S8x
+        VokdpwNoB6bZdp5Zbd75wD8KlOBbVqBv/Tof+KuAzbG5vwXGnQ9QYBXtgbil0KbTAZuD9plasO04PwS0
+        XTsfzBNOBdDKRGrhBFPF+cCHNIt2Rzy+S3NOB1h0cIh2FQwyuxrXEjAswveIFgusOZ3g19h9k5YSgbmB
+        6SIlOcBvY9zzNGBeouZpvIOmCaM7yYNiM+Yxb+GX9yINTPaYKnzTY7LrIl9As567jOuFyXlYXxjt7luE
+        PeU+k574HkfPAekHK1OxDAvtpjsAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
