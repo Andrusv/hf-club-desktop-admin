@@ -11,7 +11,7 @@ namespace DataAccess
         static readonly HttpClient client = new HttpClient();
         static readonly String uri = "http://localhost:3000";
 
-        public static async Task<String> get(string endpoint, String body)
+        public static async Task<String> simpleRequest(string endpoint, String body, HttpMethod Method, String token)
         {
             try
             {
@@ -22,17 +22,18 @@ namespace DataAccess
 
                 var request = new HttpRequestMessage
                 {
-                    Method = HttpMethod.Get,
+                    Method = Method,
                     RequestUri = new Uri(url),
                     Content = new StringContent(body, Encoding.UTF8, ContentType.Json),
                 };
+
+                request.Headers.Add("Authorization", "Bearer "+token);
 
                 var response = await client.SendAsync(request).ConfigureAwait(false);
                 response.EnsureSuccessStatusCode();
 
                 var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-                //string responseBody = await client.GetStringAsync(url);
                 return responseBody.ToString();
             }
             catch (HttpRequestException e)
