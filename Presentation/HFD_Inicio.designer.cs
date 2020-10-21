@@ -126,6 +126,9 @@
             this.txtpassword.TabIndex = 2;
             this.txtpassword.Text = "CONTRASEÑA";
             this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
+            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpassword_KeyDown);
+            this.txtpassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpassword_KeyPress);
+            this.txtpassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtpassword_KeyUp);
             this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // label1

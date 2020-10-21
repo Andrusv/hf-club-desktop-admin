@@ -16,18 +16,11 @@ namespace Domain
     {
         private User usuario = new User();
 
-        public async Task<String> loginAdminAsync(User userBody)
+        public async Task<LoginResponse> loginAdminAsync(User userBody)
         {
             var serverResponse = await loginAdmin(userBody.username, userBody.password, userBody.apiKeyToken);
 
-            
-            if (serverResponse.error == null)
-            {
-                return JsonConvert.SerializeObject(serverResponse);
-            } else
-            {
-                return serverResponse.error;
-            }
+                return serverResponse;
         }
     }
 }

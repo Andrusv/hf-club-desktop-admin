@@ -67,6 +67,36 @@ namespace hf_club_desktop_admin
             }
         }
 
+        private void txtpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+
+                UseWaitCursor = true;
+
+                disableItems();
+
+                btnlogin_ClickAsync(sender, e);
+            }
+        }
+
+        private void txtpassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btnclose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -97,11 +127,17 @@ namespace hf_club_desktop_admin
 
         private async void btnlogin_ClickAsync(object sender, EventArgs e)
         {
+            UseWaitCursor = true;
+
+            disableItems();
+
             if (txtuser.Text == "CORREO ELECTRÓNICO" || txtuser.Text == "")
             {
                 this.msgError("El campo de correo electrónico no puede estar vacío");
                 txtuser.Select();
 
+                UseWaitCursor = false;
+                enableItems();
                 return;
             }
 
@@ -110,6 +146,8 @@ namespace hf_club_desktop_admin
                 this.msgError("El campo de contraseña no puede estar vacío");
                 txtpassword.Select();
 
+                UseWaitCursor = false;
+                enableItems();
                 return;
             }
 
@@ -119,13 +157,39 @@ namespace hf_club_desktop_admin
             usuario.password = txtpassword.Text;
             usuario.apiKeyToken = apiKeyToken;
 
-            MessageBox.Show(await users.loginAdminAsync(usuario));
+            var stats = await users.loginAdminAsync(usuario);
+
+            if (stats.error == null)
+            {
+                UseWaitCursor = false;
+                MessageBox.Show(stats.token);
+                enableItems();
+            } else
+            {
+                UseWaitCursor = false;
+                msgError(stats.error);
+                enableItems();
+            }
         }
 
         private void msgError(String msg)
         {
             lblErrorMessage.Text = "      " + msg;
             lblErrorMessage.Visible = true;
+        }
+
+        private void enableItems()
+        {
+            txtuser.Enabled = true;
+            txtpassword.Enabled = true;
+            btnlogin.Enabled = true;
+        }
+
+        private void disableItems()
+        {
+            txtuser.Enabled = false;
+            txtpassword.Enabled = false;
+            btnlogin.Enabled = false;
         }
     }
 }
