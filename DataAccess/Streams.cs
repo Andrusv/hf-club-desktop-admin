@@ -6,7 +6,7 @@ namespace DataAccess
 {
     public abstract class Streams
     {
-        static readonly String fileName = @"C:\Users\Andres\Documents\Projects\SharpDevelop Projects\hf-club-desktop-admin\images\words.txt";
+        static readonly String fileName = @".\cache";
 
         public static String read()
         {

@@ -42,21 +42,16 @@ namespace hf_club_desktop_admin
 
                 if (loginInfo != null && loginInfo.jwt != null)
                 {
-                    if (DateTime.Now > loginInfo.sessionExpire)
-                    {
-                        MessageBox.Show("Sesion expiro");
-                    }
-                    else
+                    if (DateTime.Now < loginInfo.sessionExpire)
                     {
                         this.Hide();
-                        MessageBox.Show(JsonConvert.SerializeObject(loginInfo));
                         hfd_login.Show();
                     }
                 }
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
+                ex.ToString();
             }
         }
 
@@ -193,8 +188,6 @@ namespace hf_club_desktop_admin
             if (stats.error == null)
             {
                 UseWaitCursor = false;
-
-                MessageBox.Show(JsonConvert.SerializeObject(FileSystem.getJwt()));
                 
                 this.Hide();
                 hfd_login.Show();

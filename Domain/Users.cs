@@ -33,5 +33,20 @@ namespace Domain
 
             return serverResponse;
         }
+
+        public async Task<String> refreshStats(String token)
+        {
+            String endpoint = "/api/users/refresh-stats";
+            String body = "{}";
+            HttpMethod method = HttpMethod.Get;
+
+            try
+            {
+                return await Api.simpleRequest(endpoint, body, method, token);
+            } catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }

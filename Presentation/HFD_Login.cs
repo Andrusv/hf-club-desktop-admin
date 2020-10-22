@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
 
 namespace Presentation
 {
@@ -17,15 +19,70 @@ namespace Presentation
             InitializeComponent();
         }
 
-        private void btnslide_Click(object sender, EventArgs e)
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        
+
+        Users users = new Users();
+
+        private void disableButtons()
         {
-            if (MenuVertical.Width == 135)
-            {
-                MenuVertical.Width = 40;
-            } else
-            {
-                MenuVertical.Width = 135;
-            }
+            btnRefresh.Enabled = false;
+            btnPendingWithdrawals.Enabled = false;
+            btnAprovedWithdrawals.Enabled = false;
+            btnBanUser.Enabled = false;
+            btnGenerateCoupons.Enabled = false;
+        }
+
+        private void enableButtons()
+        {
+            btnRefresh.Enabled = true;
+            btnPendingWithdrawals.Enabled = true;
+            btnAprovedWithdrawals.Enabled = true;
+            btnBanUser.Enabled = true;
+            btnGenerateCoupons.Enabled = true;
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void HFD_Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnRefresh_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnRefresh.Visible = false;
+            pctRefreshOrange.Visible = true;
+        }
+
+        private async Task btnRefresh_MouseLeaveAsync(object sender, EventArgs e)
+        {
+            btnRefresh.Visible = true;
+            pctRefreshOrange.Visible = false;
+
+            disableButtons();
+            UseWaitCursor = true;
+
+            await users.refreshStats();
+        }
+
+        private void msgError(String msg)
+        {
+            lblErrorMessage.Text = "      " + msg;
+            lblErrorMessage.Visible = true;
         }
     }
 }
