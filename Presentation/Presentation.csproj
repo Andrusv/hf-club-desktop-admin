@@ -73,10 +73,19 @@
     <Compile Include="HFD_Inicio.designer.cs">
       <DependentUpon>HFD_Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="HFD_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HFD_Login.Designer.cs">
+      <DependentUpon>HFD_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="HFD_Inicio.resx">
       <DependentUpon>HFD_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HFD_Login.resx">
+      <DependentUpon>HFD_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

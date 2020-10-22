@@ -4,7 +4,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Domain;
 using Domain.objects;
+using System.Web;
 using Newtonsoft.Json;
+using Presentation;
 
 namespace hf_club_desktop_admin
 {
@@ -22,11 +24,40 @@ namespace hf_club_desktop_admin
 
         private Users users = new Users();
         private User usuario = new User();
+        private LoginInfo loginInfo = new LoginInfo();
+
+        private HFD_Login hfd_login = new HFD_Login();
 
         private readonly String apiKeyToken = "7ed9b7682df930a86c38b2e0e70e9ad263508ccdcc7f8c103e154e85dde50667";
 
         private void HFD_Inicio_Load(object sender, EventArgs e)
         {
+        }
+
+        private void HFD_Inicio_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                loginInfo = FileSystem.getJwt();
+
+                if (loginInfo != null && loginInfo.jwt != null)
+                {
+                    if (DateTime.Now > loginInfo.sessionExpire)
+                    {
+                        MessageBox.Show("Sesion expiro");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        MessageBox.Show(JsonConvert.SerializeObject(loginInfo));
+                        hfd_login.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+            }
         }
 
         private void txtuser_Enter(object sender, EventArgs e)
@@ -162,13 +193,17 @@ namespace hf_club_desktop_admin
             if (stats.error == null)
             {
                 UseWaitCursor = false;
-                MessageBox.Show(stats.token);
-                enableItems();
+
+                MessageBox.Show(JsonConvert.SerializeObject(FileSystem.getJwt()));
+                
+                this.Hide();
+                hfd_login.Show();
             } else
             {
                 UseWaitCursor = false;
                 msgError(stats.error);
                 enableItems();
+                txtuser.Focus();
             }
         }
 

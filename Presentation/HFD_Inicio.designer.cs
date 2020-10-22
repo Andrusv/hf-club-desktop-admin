@@ -231,7 +231,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.HFD_Inicio_Load);
+            this.Shown += new System.EventHandler(this.HFD_Inicio_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Inicio_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

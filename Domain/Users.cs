@@ -18,9 +18,20 @@ namespace Domain
 
         public async Task<LoginResponse> loginAdminAsync(User userBody)
         {
+            LoginInfo writeData = new LoginInfo();
+
             var serverResponse = await loginAdmin(userBody.username, userBody.password, userBody.apiKeyToken);
 
-                return serverResponse;
+            if (serverResponse.error == null)
+            {
+                writeData.jwt = serverResponse.token;
+                writeData.sessionExpire = DateTime.Now.AddHours(23);
+                writeData.error = null;
+
+                FileSystem.writeJwt(writeData);
+            }
+
+            return serverResponse;
         }
     }
 }
