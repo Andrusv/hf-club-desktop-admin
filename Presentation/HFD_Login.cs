@@ -103,5 +103,12 @@ namespace Presentation
             lblErrorMessage.Text = "      " + msg;
             lblErrorMessage.Visible = true;
         }
+
+        private void btnGenerateCoupons_Click(object sender, EventArgs e)
+        {
+            HFD_Generate_Coupons hfd_generate_coupons = new HFD_Generate_Coupons();
+            this.Hide();
+            hfd_generate_coupons.Show();
+        }
     }
 }

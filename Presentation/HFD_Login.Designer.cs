@@ -291,6 +291,7 @@
             this.btnGenerateCoupons.TabIndex = 23;
             this.btnGenerateCoupons.Text = "GENERAR CUPONES";
             this.btnGenerateCoupons.UseVisualStyleBackColor = false;
+            this.btnGenerateCoupons.Click += new System.EventHandler(this.btnGenerateCoupons_Click);
             // 
             // pctRefreshOrange
             // 

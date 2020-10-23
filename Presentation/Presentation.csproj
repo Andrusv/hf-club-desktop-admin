@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HFD_Generate_Coupons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HFD_Generate_Coupons.Designer.cs">
+      <DependentUpon>HFD_Generate_Coupons.cs</DependentUpon>
+    </Compile>
     <Compile Include="HFD_Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HFD_Generate_Coupons.resx">
+      <DependentUpon>HFD_Generate_Coupons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HFD_Inicio.resx">
       <DependentUpon>HFD_Inicio.cs</DependentUpon>
     </EmbeddedResource>
