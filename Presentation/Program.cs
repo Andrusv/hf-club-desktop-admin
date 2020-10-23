@@ -16,7 +16,7 @@ namespace Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new hf_club_desktop_admin.HFD_Inicio());
+            Application.Run(new Presentation.HFD_Inicio());
         }
     }
 }

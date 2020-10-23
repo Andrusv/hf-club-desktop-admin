@@ -1,4 +1,4 @@
-﻿namespace hf_club_desktop_admin
+﻿namespace Presentation
 {
     partial class HFD_Inicio
     {

@@ -14,8 +14,6 @@ namespace Domain
 {
     public class Users:Api
     {
-        private User usuario = new User();
-
         public async Task<LoginResponse> loginAdminAsync(User userBody)
         {
             LoginInfo writeData = new LoginInfo();
@@ -34,7 +32,7 @@ namespace Domain
             return serverResponse;
         }
 
-        public async Task<String> refreshStats(String token)
+        public async Task<Stats> refreshStats(String token)
         {
             String endpoint = "/api/users/refresh-stats";
             String body = "{}";
@@ -42,10 +40,12 @@ namespace Domain
 
             try
             {
-                return await Api.simpleRequest(endpoint, body, method, token);
+                String response = await Api.simpleRequest(endpoint, body, method, token);
+                Stats stats = JsonConvert.DeserializeObject<Stats>(response);
+                return stats;
             } catch (Exception ex)
             {
-                return ex.ToString();
+                throw new Exception(ex.ToString());
             }
         }
     }

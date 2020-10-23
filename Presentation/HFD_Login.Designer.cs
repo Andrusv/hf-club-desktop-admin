@@ -33,14 +33,14 @@
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.PictureBox();
             this.lblTotalCredits = new System.Windows.Forms.Label();
             this.lblTotalWithdrawals = new System.Windows.Forms.Label();
             this.lblTotalCoupons = new System.Windows.Forms.Label();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtTotalCredits = new System.Windows.Forms.Label();
             this.txtTotalWithdrawals = new System.Windows.Forms.Label();
             this.txtTotalCoupons = new System.Windows.Forms.Label();
@@ -103,6 +103,36 @@
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Enabled = false;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 462;
+            this.lineShape4.X2 = 381;
+            this.lineShape4.Y1 = 134;
+            this.lineShape4.Y2 = 134;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 462;
+            this.lineShape3.X2 = 381;
+            this.lineShape3.Y1 = 99;
+            this.lineShape3.Y2 = 99;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Enabled = false;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 463;
+            this.lineShape2.X2 = 382;
+            this.lineShape2.Y1 = 67;
+            this.lineShape2.Y2 = 67;
+            // 
             // pctLogo
             // 
             this.pctLogo.Location = new System.Drawing.Point(20, 45);
@@ -121,14 +151,14 @@
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.TabStop = false;
             this.btnRefresh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseDown);
-            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeaveAsync);
+            this.btnRefresh.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseUpAsync);
             // 
             // lblTotalCredits
             // 
             this.lblTotalCredits.AutoSize = true;
             this.lblTotalCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblTotalCredits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCredits.ForeColor = System.Drawing.Color.LightGray;
+            this.lblTotalCredits.ForeColor = System.Drawing.Color.DimGray;
             this.lblTotalCredits.Location = new System.Drawing.Point(220, 45);
             this.lblTotalCredits.Name = "lblTotalCredits";
             this.lblTotalCredits.Size = new System.Drawing.Size(155, 21);
@@ -140,7 +170,7 @@
             this.lblTotalWithdrawals.AutoSize = true;
             this.lblTotalWithdrawals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblTotalWithdrawals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalWithdrawals.ForeColor = System.Drawing.Color.LightGray;
+            this.lblTotalWithdrawals.ForeColor = System.Drawing.Color.DimGray;
             this.lblTotalWithdrawals.Location = new System.Drawing.Point(220, 78);
             this.lblTotalWithdrawals.Name = "lblTotalWithdrawals";
             this.lblTotalWithdrawals.Size = new System.Drawing.Size(153, 21);
@@ -152,42 +182,12 @@
             this.lblTotalCoupons.AutoSize = true;
             this.lblTotalCoupons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblTotalCoupons.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCoupons.ForeColor = System.Drawing.Color.LightGray;
+            this.lblTotalCoupons.ForeColor = System.Drawing.Color.DimGray;
             this.lblTotalCoupons.Location = new System.Drawing.Point(220, 112);
             this.lblTotalCoupons.Name = "lblTotalCoupons";
             this.lblTotalCoupons.Size = new System.Drawing.Size(145, 21);
             this.lblTotalCoupons.TabIndex = 16;
             this.lblTotalCoupons.Text = "Cupones restantes :";
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 463;
-            this.lineShape2.X2 = 382;
-            this.lineShape2.Y1 = 67;
-            this.lineShape2.Y2 = 67;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape3.Enabled = false;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 462;
-            this.lineShape3.X2 = 381;
-            this.lineShape3.Y1 = 99;
-            this.lineShape3.Y2 = 99;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape4.Enabled = false;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 462;
-            this.lineShape4.X2 = 381;
-            this.lineShape4.Y1 = 134;
-            this.lineShape4.Y2 = 134;
             // 
             // txtTotalCredits
             // 

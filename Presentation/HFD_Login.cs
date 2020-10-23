@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using DataAccess.objects;
+using Newtonsoft.Json;
 
 namespace Presentation
 {
@@ -24,12 +26,14 @@ namespace Presentation
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        
+        public readonly string sessionToken = new HFD_Inicio().loginInfo.jwt;
 
-        Users users = new Users();
+        private Users users = new Users();
+        private Stats stats = new Stats();
 
         private void disableButtons()
         {
+            lblErrorMessage.Visible = false;
             btnRefresh.Enabled = false;
             btnPendingWithdrawals.Enabled = false;
             btnAprovedWithdrawals.Enabled = false;
@@ -68,15 +72,30 @@ namespace Presentation
             pctRefreshOrange.Visible = true;
         }
 
-        private async Task btnRefresh_MouseLeaveAsync(object sender, EventArgs e)
+        private async void btnRefresh_MouseUpAsync(object sender, MouseEventArgs e)
         {
-            btnRefresh.Visible = true;
-            pctRefreshOrange.Visible = false;
-
             disableButtons();
             UseWaitCursor = true;
 
-            await users.refreshStats();
+            btnRefresh.Visible = true;
+            pctRefreshOrange.Visible = false;
+
+            try
+            {
+                Stats stats = await users.refreshStats(sessionToken);
+                
+                txtTotalCoupons.Text = stats.totalCoupons.ToString();
+                txtTotalCredits.Text = stats.totalCredits.ToString();
+                txtTotalWithdrawals.Text = stats.totalWithdrawals.ToString();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                msgError("Error de comunicacion con el servidor");
+            }
+
+            enableButtons();
+            UseWaitCursor = false;
         }
 
         private void msgError(String msg)

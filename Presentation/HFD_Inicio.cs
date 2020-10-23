@@ -8,7 +8,7 @@ using System.Web;
 using Newtonsoft.Json;
 using Presentation;
 
-namespace hf_club_desktop_admin
+namespace Presentation
 {
     public partial class HFD_Inicio : Form
     {
@@ -24,11 +24,31 @@ namespace hf_club_desktop_admin
 
         private Users users = new Users();
         private User usuario = new User();
-        private LoginInfo loginInfo = new LoginInfo();
 
-        private HFD_Login hfd_login = new HFD_Login();
+        public LoginInfo loginInfo = getLoginInfo();
 
         private readonly String apiKeyToken = "7ed9b7682df930a86c38b2e0e70e9ad263508ccdcc7f8c103e154e85dde50667";
+
+        
+        private static LoginInfo getLoginInfo()
+        {
+            try
+            {
+                LoginInfo cache = FileSystem.getJwt();
+
+                return cache;
+            } catch (Exception ex)
+            {
+                ex.ToString();
+            }
+
+            return new LoginInfo()
+            {
+                jwt = "",
+                sessionExpire = new DateTime(),
+                error = null
+            };
+        }
 
         private void HFD_Inicio_Load(object sender, EventArgs e)
         {
@@ -36,22 +56,12 @@ namespace hf_club_desktop_admin
 
         private void HFD_Inicio_Shown(object sender, EventArgs e)
         {
-            try
+            HFD_Login hfd_login = new HFD_Login();
+            
+            if (DateTime.Now < loginInfo.sessionExpire)
             {
-                loginInfo = FileSystem.getJwt();
-
-                if (loginInfo != null && loginInfo.jwt != null)
-                {
-                    if (DateTime.Now < loginInfo.sessionExpire)
-                    {
-                        this.Hide();
-                        hfd_login.Show();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
+                this.Hide();
+                hfd_login.Show();
             }
         }
 
@@ -153,6 +163,7 @@ namespace hf_club_desktop_admin
 
         private async void btnlogin_ClickAsync(object sender, EventArgs e)
         {
+            HFD_Login hfd_login = new HFD_Login();
             UseWaitCursor = true;
 
             disableItems();
@@ -188,7 +199,7 @@ namespace hf_club_desktop_admin
             if (stats.error == null)
             {
                 UseWaitCursor = false;
-                
+
                 this.Hide();
                 hfd_login.Show();
             } else
