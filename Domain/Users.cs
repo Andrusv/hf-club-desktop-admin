@@ -48,5 +48,20 @@ namespace Domain
                 throw new Exception(ex.ToString());
             }
         }
+
+        public async Task<String> banUser(String token, String userId)
+        {
+            String endpoint = "/api/users/ban";
+            String body = "{\"user_id\":\""+userId+"\"}";
+            HttpMethod method = HttpMethod.Post;
+
+            try
+            {
+                return await Api.simpleRequest(endpoint, body, method, token);
+            } catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }

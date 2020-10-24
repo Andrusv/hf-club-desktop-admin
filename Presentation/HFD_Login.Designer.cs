@@ -275,6 +275,7 @@
             this.btnBanUser.TabIndex = 22;
             this.btnBanUser.Text = "BANEAR USUARIO";
             this.btnBanUser.UseVisualStyleBackColor = false;
+            this.btnBanUser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnBanUser_MouseClick);
             // 
             // btnGenerateCoupons
             // 

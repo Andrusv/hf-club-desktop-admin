@@ -110,5 +110,12 @@ namespace Presentation
             this.Hide();
             hfd_generate_coupons.Show();
         }
+
+        private void btnBanUser_MouseClick(object sender, MouseEventArgs e)
+        {
+            HFD_Ban_User hfd_generate_coupons = new HFD_Ban_User();
+            this.Hide();
+            hfd_generate_coupons.Show();
+        }
     }
 }
