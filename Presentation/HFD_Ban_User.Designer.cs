@@ -154,8 +154,8 @@
             this.Controls.Add(this.btnBanUser);
             this.Controls.Add(this.txtUserId);
             this.Controls.Add(this.btnArrowBack);
-            this.Controls.Add(this.pctArrowBack);
             this.Controls.Add(this.shapeContainer1);
+            this.Controls.Add(this.pctArrowBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HFD_Ban_User";
             this.Opacity = 0.9D;

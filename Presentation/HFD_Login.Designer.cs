@@ -243,6 +243,7 @@
             this.btnPendingWithdrawals.TabIndex = 20;
             this.btnPendingWithdrawals.Text = "RETIROS POR APROBAR";
             this.btnPendingWithdrawals.UseVisualStyleBackColor = false;
+            this.btnPendingWithdrawals.Click += new System.EventHandler(this.btnPendingWithdrawals_Click);
             // 
             // btnAprovedWithdrawals
             // 

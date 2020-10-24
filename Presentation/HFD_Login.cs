@@ -117,5 +117,12 @@ namespace Presentation
             this.Hide();
             hfd_generate_coupons.Show();
         }
+
+        private void btnPendingWithdrawals_Click(object sender, EventArgs e)
+        {
+            HFD_Pending_Withdrawals hfd_pending_withdrawals = new HFD_Pending_Withdrawals();
+            this.Hide();
+            hfd_pending_withdrawals.Show();
+        }
     }
 }
