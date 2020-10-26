@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using Newtonsoft.Json;
+using Domain.objects;
 
 namespace Presentation
 {
@@ -44,6 +47,25 @@ namespace Presentation
 
             this.Hide();
             hfd_login.Show();
+        }
+
+        private async void HFD_Pending_Withdrawals_LoadAsync(object sender, EventArgs e)
+        {
+            HFD_Inicio hfd_inicio = new HFD_Inicio();
+            Withdrawals withdrawals = new Withdrawals();
+            PendingWithdrawalsObject pendingWithdrawalsObject = new PendingWithdrawalsObject();
+
+            PendingWithdrawals pendingWithdrawals = JsonConvert.DeserializeObject<PendingWithdrawals>(await withdrawals.getPendingWithdrawals(hfd_inicio.loginInfo.jwt));
+                        
+            for (var i=0; i < pendingWithdrawals.pendingWithdrawals.Length; i++)
+            {
+                var user_id = pendingWithdrawals.pendingWithdrawals[i].user_id;
+                var balance = pendingWithdrawals.pendingWithdrawals[i].balance;
+
+                String[] row = { user_id, balance.ToString() };
+
+                dgvPendingWithdrawals.Rows.Add(row);
+            }
         }
     }
 }

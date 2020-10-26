@@ -32,8 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnArrowBack = new System.Windows.Forms.PictureBox();
             this.pctArrowBack = new System.Windows.Forms.PictureBox();
+            this.dgvPendingWithdrawals = new System.Windows.Forms.DataGridView();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPendingWithdrawals)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,12 +75,40 @@
             this.pctArrowBack.TabStop = false;
             this.pctArrowBack.Visible = false;
             // 
+            // dgvPendingWithdrawals
+            // 
+            this.dgvPendingWithdrawals.AllowUserToAddRows = false;
+            this.dgvPendingWithdrawals.AllowUserToDeleteRows = false;
+            this.dgvPendingWithdrawals.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPendingWithdrawals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.user_id,
+            this.balance});
+            this.dgvPendingWithdrawals.Location = new System.Drawing.Point(62, 74);
+            this.dgvPendingWithdrawals.Name = "dgvPendingWithdrawals";
+            this.dgvPendingWithdrawals.ReadOnly = true;
+            this.dgvPendingWithdrawals.Size = new System.Drawing.Size(365, 286);
+            this.dgvPendingWithdrawals.TabIndex = 25;
+            // 
+            // user_id
+            // 
+            this.user_id.HeaderText = "user_id";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            // 
+            // balance
+            // 
+            this.balance.HeaderText = "balance";
+            this.balance.Name = "balance";
+            this.balance.ReadOnly = true;
+            // 
             // HFD_Pending_Withdrawals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(478, 392);
+            this.Controls.Add(this.dgvPendingWithdrawals);
             this.Controls.Add(this.btnArrowBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pctArrowBack);
@@ -85,9 +117,11 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HFD_Pending_Withdrawals";
+            this.Load += new System.EventHandler(this.HFD_Pending_Withdrawals_LoadAsync);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Pending_Withdrawals_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPendingWithdrawals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +132,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnArrowBack;
         private System.Windows.Forms.PictureBox pctArrowBack;
+        private System.Windows.Forms.DataGridView dgvPendingWithdrawals;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
     }
 }
