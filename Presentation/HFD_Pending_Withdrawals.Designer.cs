@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HFD_Pending_Withdrawals));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnArrowBack = new System.Windows.Forms.PictureBox();
             this.pctArrowBack = new System.Windows.Forms.PictureBox();
-            this.dgvPendingWithdrawals = new System.Windows.Forms.DataGridView();
+            this.dgvPendingWithdrawals = new Guna.UI.WinForms.GunaDataGridView();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).BeginInit();
@@ -79,26 +84,86 @@
             // 
             this.dgvPendingWithdrawals.AllowUserToAddRows = false;
             this.dgvPendingWithdrawals.AllowUserToDeleteRows = false;
+            this.dgvPendingWithdrawals.AllowUserToResizeColumns = false;
+            this.dgvPendingWithdrawals.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.LightGray;
+            this.dgvPendingWithdrawals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPendingWithdrawals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPendingWithdrawals.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dgvPendingWithdrawals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPendingWithdrawals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPendingWithdrawals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPendingWithdrawals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(169)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(169)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPendingWithdrawals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPendingWithdrawals.ColumnHeadersHeight = 40;
+            this.dgvPendingWithdrawals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPendingWithdrawals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.user_id,
             this.balance});
-            this.dgvPendingWithdrawals.Location = new System.Drawing.Point(62, 74);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPendingWithdrawals.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPendingWithdrawals.EnableHeadersVisualStyles = false;
+            this.dgvPendingWithdrawals.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.Location = new System.Drawing.Point(33, 67);
             this.dgvPendingWithdrawals.Name = "dgvPendingWithdrawals";
             this.dgvPendingWithdrawals.ReadOnly = true;
-            this.dgvPendingWithdrawals.Size = new System.Drawing.Size(365, 286);
-            this.dgvPendingWithdrawals.TabIndex = 25;
+            this.dgvPendingWithdrawals.RowHeadersVisible = false;
+            this.dgvPendingWithdrawals.RowTemplate.Height = 40;
+            this.dgvPendingWithdrawals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPendingWithdrawals.Size = new System.Drawing.Size(417, 293);
+            this.dgvPendingWithdrawals.TabIndex = 26;
+            this.dgvPendingWithdrawals.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvPendingWithdrawals.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvPendingWithdrawals.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvPendingWithdrawals.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.LightGray;
+            this.dgvPendingWithdrawals.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(169)))), ((int)(((byte)(74)))));
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPendingWithdrawals.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvPendingWithdrawals.ThemeStyle.ReadOnly = true;
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.LightGray;
             // 
             // user_id
             // 
-            this.user_id.HeaderText = "user_id";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.user_id.DefaultCellStyle = dataGridViewCellStyle3;
+            this.user_id.HeaderText = "user_ID";
             this.user_id.Name = "user_id";
             this.user_id.ReadOnly = true;
             // 
             // balance
             // 
-            this.balance.HeaderText = "balance";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.balance.DefaultCellStyle = dataGridViewCellStyle4;
+            this.balance.HeaderText = "Balance";
             this.balance.Name = "balance";
             this.balance.ReadOnly = true;
             // 
@@ -132,7 +197,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnArrowBack;
         private System.Windows.Forms.PictureBox pctArrowBack;
-        private System.Windows.Forms.DataGridView dgvPendingWithdrawals;
+        private Guna.UI.WinForms.GunaDataGridView dgvPendingWithdrawals;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
     }

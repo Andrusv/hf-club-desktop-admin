@@ -53,7 +53,6 @@ namespace Presentation
         {
             HFD_Inicio hfd_inicio = new HFD_Inicio();
             Withdrawals withdrawals = new Withdrawals();
-            PendingWithdrawalsObject pendingWithdrawalsObject = new PendingWithdrawalsObject();
 
             PendingWithdrawals pendingWithdrawals = JsonConvert.DeserializeObject<PendingWithdrawals>(await withdrawals.getPendingWithdrawals(hfd_inicio.loginInfo.jwt));
                         
