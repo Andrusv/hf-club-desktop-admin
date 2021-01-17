@@ -16,5 +16,10 @@ namespace Presentation
         {
             InitializeComponent();
         }
+
+        private void HFD_Aprove_Coupons_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
