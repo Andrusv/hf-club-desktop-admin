@@ -53,6 +53,7 @@
             this.btnArrowBack.TabIndex = 22;
             this.btnArrowBack.TabStop = false;
             this.btnArrowBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnArrowBack_MouseDown);
+            this.btnArrowBack.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnArrowBack_MouseUp);
             // 
             // lblUserId
             // 
@@ -60,7 +61,7 @@
             this.lblUserId.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserId.ForeColor = System.Drawing.Color.DimGray;
             this.lblUserId.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblUserId.Location = new System.Drawing.Point(74, 15);
+            this.lblUserId.Location = new System.Drawing.Point(74, 11);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(70, 37);
             this.lblUserId.TabIndex = 25;
@@ -88,6 +89,8 @@
             // 
             // txb_Response
             // 
+            this.txb_Response.CausesValidation = false;
+            this.txb_Response.Enabled = false;
             this.txb_Response.Location = new System.Drawing.Point(45, 183);
             this.txb_Response.Multiline = true;
             this.txb_Response.Name = "txb_Response";
@@ -96,7 +99,8 @@
             // 
             // txb_Link
             // 
-            this.txb_Link.Location = new System.Drawing.Point(258, 128);
+            this.txb_Link.Enabled = false;
+            this.txb_Link.Location = new System.Drawing.Point(237, 128);
             this.txb_Link.Name = "txb_Link";
             this.txb_Link.Size = new System.Drawing.Size(174, 20);
             this.txb_Link.TabIndex = 28;
@@ -107,7 +111,7 @@
             this.lbl_Link.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Link.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_Link.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_Link.Location = new System.Drawing.Point(76, 122);
+            this.lbl_Link.Location = new System.Drawing.Point(55, 122);
             this.lbl_Link.Name = "lbl_Link";
             this.lbl_Link.Size = new System.Drawing.Size(50, 25);
             this.lbl_Link.TabIndex = 29;
@@ -115,7 +119,8 @@
             // 
             // txb_Acumulado
             // 
-            this.txb_Acumulado.Location = new System.Drawing.Point(345, 28);
+            this.txb_Acumulado.Enabled = false;
+            this.txb_Acumulado.Location = new System.Drawing.Point(237, 82);
             this.txb_Acumulado.Name = "txb_Acumulado";
             this.txb_Acumulado.Size = new System.Drawing.Size(121, 20);
             this.txb_Acumulado.TabIndex = 30;
@@ -126,7 +131,7 @@
             this.lbl_Acumulado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Acumulado.ForeColor = System.Drawing.Color.DimGray;
             this.lbl_Acumulado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_Acumulado.Location = new System.Drawing.Point(227, 23);
+            this.lbl_Acumulado.Location = new System.Drawing.Point(55, 77);
             this.lbl_Acumulado.Name = "lbl_Acumulado";
             this.lbl_Acumulado.Size = new System.Drawing.Size(112, 25);
             this.lbl_Acumulado.TabIndex = 31;
@@ -165,7 +170,6 @@
             this.Text = "HFD_Aprove_Coupons";
             this.Load += new System.EventHandler(this.HFD_Aprove_Coupons_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Aprove_Coupons_MouseDown);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HFD_Aprove_Coupons_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).EndInit();
             this.ResumeLayout(false);

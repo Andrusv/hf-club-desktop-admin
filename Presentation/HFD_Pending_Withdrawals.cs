@@ -80,7 +80,7 @@ namespace Presentation
 
             HFD_Aprove_Coupons HFD_Aprove_Coupons = new HFD_Aprove_Coupons();
 
-            userIdCouponsToAprove = row.Cells["balance"].Value.ToString();
+            userIdCouponsToAprove = row.Cells["user_ID"].Value.ToString();
             this.Hide();
             HFD_Aprove_Coupons.Show();
         }

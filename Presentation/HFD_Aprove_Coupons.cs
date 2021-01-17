@@ -35,7 +35,12 @@ namespace Presentation
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void HFD_Aprove_Coupons_MouseUp(object sender, MouseEventArgs e)
+        private void HFD_Aprove_Coupons_Load(object sender, EventArgs e)
+        {
+            lblUserId.Text = HFD_Pending_Withdrawals.userIdCouponsToAprove;
+        }
+
+        private void btnArrowBack_MouseUp(object sender, MouseEventArgs e)
         {
             btnArrowBack.Visible = true;
             pctArrowBack.Visible = false;
@@ -44,12 +49,6 @@ namespace Presentation
 
             this.Hide();
             HFD_Pending_Withdrawals.Show();
-        }
-
-        private void HFD_Aprove_Coupons_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show(HFD_Pending_Withdrawals.userIdCouponsToAprove);
-            lblUserId.Text = HFD_Pending_Withdrawals.userIdCouponsToAprove;
         }
     }
 }
