@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HFD_Aprove_Coupons));
             this.btnArrowBack = new System.Windows.Forms.PictureBox();
-            this.lbl_UserId = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txb_Response = new System.Windows.Forms.TextBox();
@@ -38,7 +38,9 @@
             this.lbl_Link = new System.Windows.Forms.Label();
             this.txb_Acumulado = new System.Windows.Forms.TextBox();
             this.lbl_Acumulado = new System.Windows.Forms.Label();
+            this.pctArrowBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).BeginInit();
             this.SuspendLayout();
             // 
             // btnArrowBack
@@ -50,19 +52,19 @@
             this.btnArrowBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnArrowBack.TabIndex = 22;
             this.btnArrowBack.TabStop = false;
-            this.btnArrowBack.Click += new System.EventHandler(this.btnArrowBack_Click);
+            this.btnArrowBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnArrowBack_MouseDown);
             // 
-            // lbl_UserId
+            // lblUserId
             // 
-            this.lbl_UserId.AutoSize = true;
-            this.lbl_UserId.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserId.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_UserId.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_UserId.Location = new System.Drawing.Point(74, 15);
-            this.lbl_UserId.Name = "lbl_UserId";
-            this.lbl_UserId.Size = new System.Drawing.Size(70, 37);
-            this.lbl_UserId.TabIndex = 25;
-            this.lbl_UserId.Text = "User";
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserId.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUserId.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblUserId.Location = new System.Drawing.Point(74, 15);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(70, 37);
+            this.lblUserId.TabIndex = 25;
+            this.lblUserId.Text = "User";
             // 
             // shapeContainer1
             // 
@@ -130,6 +132,17 @@
             this.lbl_Acumulado.TabIndex = 31;
             this.lbl_Acumulado.Text = "Acumulado:";
             // 
+            // pctArrowBack
+            // 
+            this.pctArrowBack.Image = ((System.Drawing.Image)(resources.GetObject("pctArrowBack.Image")));
+            this.pctArrowBack.Location = new System.Drawing.Point(13, 13);
+            this.pctArrowBack.Name = "pctArrowBack";
+            this.pctArrowBack.Size = new System.Drawing.Size(28, 31);
+            this.pctArrowBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctArrowBack.TabIndex = 32;
+            this.pctArrowBack.TabStop = false;
+            this.pctArrowBack.Visible = false;
+            // 
             // HFD_Aprove_Coupons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,8 +154,9 @@
             this.Controls.Add(this.lbl_Link);
             this.Controls.Add(this.txb_Link);
             this.Controls.Add(this.txb_Response);
-            this.Controls.Add(this.lbl_UserId);
+            this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.btnArrowBack);
+            this.Controls.Add(this.pctArrowBack);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HFD_Aprove_Coupons";
@@ -150,7 +164,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HFD_Aprove_Coupons";
             this.Load += new System.EventHandler(this.HFD_Aprove_Coupons_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Aprove_Coupons_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HFD_Aprove_Coupons_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +176,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox btnArrowBack;
-        private System.Windows.Forms.Label lbl_UserId;
+        private System.Windows.Forms.Label lblUserId;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox txb_Response;
@@ -167,5 +184,6 @@
         private System.Windows.Forms.Label lbl_Link;
         private System.Windows.Forms.TextBox txb_Acumulado;
         private System.Windows.Forms.Label lbl_Acumulado;
+        private System.Windows.Forms.PictureBox pctArrowBack;
     }
 }

@@ -26,6 +26,8 @@ namespace Presentation
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        internal static string userIdCouponsToAprove;
+
         private void HFD_Pending_Withdrawals_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -76,8 +78,11 @@ namespace Presentation
                 return;
             }
 
-            MessageBox.Show("dafadf");
-            MessageBox.Show(row.Cells["balance"].Value.ToString());
+            HFD_Aprove_Coupons HFD_Aprove_Coupons = new HFD_Aprove_Coupons();
+
+            userIdCouponsToAprove = row.Cells["balance"].Value.ToString();
+            this.Hide();
+            HFD_Aprove_Coupons.Show();
         }
     }
 }

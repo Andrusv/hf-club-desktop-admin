@@ -140,4 +140,26 @@
   <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 0</value>
   </metadata>
+  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>35, 164, 396, 0</value>
+  </metadata>
+  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>35, 164</value>
+  </metadata>
+  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>396, 0</value>
+  </metadata>
+  <data name="pctArrowBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AoXBBIuZVRRcwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE6SURBVFhH
+        YxgFpIIPK72C363wWvFupWfHq1UOPFBh+oAPKz3L3q/0+g/D71Z6rYRK0R6gWw7FL6DStAU4LP//fpXX
+        BqgS2gGclq/0uvN6uZ8UVBltwPuVnsVYLAbh+++XeyhAldEGjFqOBQ9zy/Gk9ktv13rKQJXRBuCx/CSw
+        2PX5sNLbhdoYnoWBlqdisZge+Pe7FZ7RQAd4PcciSS/8CJjwvJ6gCdITP2YAlucJQMY/NAl64F/gKAAB
+        oCPygQLYHHEJKBf7YYV3KDXx+1Xefhg5C48jztO80oGBDyu80oEWYjpihdetN6t8pKHKaAvwOWLgQ2Kl
+        181RR0Ax/RyBK3cAS9Brn9e5iUGV0RbgyaJroEpoD3A4gj7NchjA4oj1UCn6AVD7ANQ1AybQ9nerXPih
+        wqOATMDAAAALnZmsvNZ30AAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
