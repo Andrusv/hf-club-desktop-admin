@@ -150,6 +150,7 @@
             this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.Height = 40;
             this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dgvPendingWithdrawals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.LightGray;
+            this.dgvPendingWithdrawals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPendingWithdrawals_CellContentClick);
             // 
             // user_id
             // 

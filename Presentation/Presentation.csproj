@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HFD_Aprove_Coupons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HFD_Aprove_Coupons.Designer.cs">
+      <DependentUpon>HFD_Aprove_Coupons.cs</DependentUpon>
+    </Compile>
     <Compile Include="HFD_Ban_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HFD_Aprove_Coupons.resx">
+      <DependentUpon>HFD_Aprove_Coupons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HFD_Ban_User.resx">
       <DependentUpon>HFD_Ban_User.cs</DependentUpon>
     </EmbeddedResource>

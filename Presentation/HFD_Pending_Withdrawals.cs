@@ -66,5 +66,18 @@ namespace Presentation
                 dgvPendingWithdrawals.Rows.Add(row);
             }
         }
+
+        private void dgvPendingWithdrawals_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvPendingWithdrawals.CurrentRow;
+
+            if (row == null)
+            {
+                return;
+            }
+
+            MessageBox.Show("dafadf");
+            MessageBox.Show(row.Cells["balance"].Value.ToString());
+        }
     }
 }
