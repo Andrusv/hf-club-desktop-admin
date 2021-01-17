@@ -49,6 +49,23 @@ namespace Domain
             }
         }
 
+        public async Task<CouponsToCheckMonthly> checkCouponsMonthly(String token, String userId)
+        {
+            String endpoint = "/api/withdrawals/get-user-views";
+            String body = $"{{\"user_id\":\"{userId}\"}}";
+            HttpMethod method = HttpMethod.Get;
+
+            try
+            {
+                String response = await Api.simpleRequest(endpoint, body, method, token);
+                CouponsToCheckMonthly couponsToCheckMonthly = JsonConvert.DeserializeObject<CouponsToCheckMonthly>(response);
+                return couponsToCheckMonthly;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
         public async Task<String> banUser(String token, String userId)
         {
             String endpoint = "/api/users/ban";

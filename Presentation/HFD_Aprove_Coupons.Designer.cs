@@ -168,7 +168,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HFD_Aprove_Coupons";
-            this.Load += new System.EventHandler(this.HFD_Aprove_Coupons_Load);
+            this.Load += new System.EventHandler(this.HFD_Aprove_Coupons_LoadAsync);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Aprove_Coupons_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).EndInit();

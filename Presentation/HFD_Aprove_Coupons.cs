@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using Domain.objects;
+using Newtonsoft.Json;
 
 namespace Presentation
 {
@@ -23,6 +26,8 @@ namespace Presentation
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        private readonly string sessionToken = new HFD_Inicio().loginInfo.jwt;
+
         private void btnArrowBack_MouseDown(object sender, MouseEventArgs e)
         {
             btnArrowBack.Visible = false;
@@ -35,9 +40,18 @@ namespace Presentation
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void HFD_Aprove_Coupons_Load(object sender, EventArgs e)
+        private async void HFD_Aprove_Coupons_LoadAsync(object sender, EventArgs e)
         {
+            UseWaitCursor = true;
             lblUserId.Text = HFD_Pending_Withdrawals.userIdCouponsToAprove;
+
+            Users user = new Users();
+            CouponsToCheckMonthly couponsToCheckMonthly = await user.checkCouponsMonthly(sessionToken, HFD_Pending_Withdrawals.userIdCouponsToAprove);
+
+            txb_Link.Text = couponsToCheckMonthly.userLink;
+            txb_Response.Text = couponsToCheckMonthly.userViews.ToString();
+
+            UseWaitCursor = false;
         }
 
         private void btnArrowBack_MouseUp(object sender, MouseEventArgs e)
