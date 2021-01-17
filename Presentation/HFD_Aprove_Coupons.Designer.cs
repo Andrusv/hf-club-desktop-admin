@@ -50,6 +50,7 @@
             this.btnArrowBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnArrowBack.TabIndex = 22;
             this.btnArrowBack.TabStop = false;
+            this.btnArrowBack.Click += new System.EventHandler(this.btnArrowBack_Click);
             // 
             // lbl_UserId
             // 
