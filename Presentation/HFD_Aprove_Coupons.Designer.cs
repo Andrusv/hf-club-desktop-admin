@@ -39,6 +39,8 @@
             this.txb_Acumulado = new System.Windows.Forms.TextBox();
             this.lbl_Acumulado = new System.Windows.Forms.Label();
             this.pctArrowBack = new System.Windows.Forms.PictureBox();
+            this.btnReject = new System.Windows.Forms.Button();
+            this.btnAccept = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).BeginInit();
             this.SuspendLayout();
@@ -148,12 +150,48 @@
             this.pctArrowBack.TabStop = false;
             this.pctArrowBack.Visible = false;
             // 
+            // btnReject
+            // 
+            this.btnReject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnReject.FlatAppearance.BorderSize = 0;
+            this.btnReject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnReject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReject.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReject.ForeColor = System.Drawing.Color.LightGray;
+            this.btnReject.Location = new System.Drawing.Point(45, 342);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(99, 23);
+            this.btnReject.TabIndex = 35;
+            this.btnReject.Text = "Reject";
+            this.btnReject.UseVisualStyleBackColor = false;
+            this.btnReject.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnReject_MouseUp);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAccept.Location = new System.Drawing.Point(323, 342);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(99, 23);
+            this.btnAccept.TabIndex = 36;
+            this.btnAccept.Text = "Accept";
+            this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAccept_MouseUpAsync);
+            // 
             // HFD_Aprove_Coupons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(478, 392);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.btnReject);
             this.Controls.Add(this.lbl_Acumulado);
             this.Controls.Add(this.txb_Acumulado);
             this.Controls.Add(this.lbl_Link);
@@ -189,5 +227,7 @@
         private System.Windows.Forms.TextBox txb_Acumulado;
         private System.Windows.Forms.Label lbl_Acumulado;
         private System.Windows.Forms.PictureBox pctArrowBack;
+        private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.Button btnAccept;
     }
 }

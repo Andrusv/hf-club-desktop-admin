@@ -49,6 +49,22 @@ namespace Domain
             }
         }
 
+        public async Task<String> AcceptWithdrawal(String token, String userId, String aproveWithdrawal)
+        {
+            String endpoint = "/api/withdrawals/aprove-withdrawals";
+            String body = $"{{\"user_id\":\"{userId}\",\"aproveWithdrawals\":{aproveWithdrawal}}}";
+            HttpMethod method = HttpMethod.Post;
+
+            try
+            {
+                String response = await Api.simpleRequest(endpoint, body, method, token);
+                return response;
+            } catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
         public async Task<CouponsToCheckMonthly> checkCouponsMonthly(String token, String userId)
         {
             String endpoint = "/api/withdrawals/get-user-views";

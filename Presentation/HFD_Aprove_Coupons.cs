@@ -64,5 +64,41 @@ namespace Presentation
             this.Hide();
             HFD_Pending_Withdrawals.Show();
         }
+
+        private void enableButtons()
+        {
+            //btnReject.Enabled = true;
+            //btnAccept.Enabled = true;
+            btnArrowBack.Enabled = true;
+        }
+
+        private void disableButtons()
+        {
+            btnReject.Enabled = false;
+            btnAccept.Enabled = false;
+            btnArrowBack.Enabled = false;
+        }
+
+        private async void btnAccept_MouseUpAsync(object sender, MouseEventArgs e)
+        {
+            disableButtons();
+
+            Users user = new Users();
+
+            txb_Response.Text = await user.AcceptWithdrawal(sessionToken, HFD_Pending_Withdrawals.userIdCouponsToAprove, "true");
+
+            enableButtons();
+        }
+
+        private async void btnReject_MouseUp(object sender, MouseEventArgs e)
+        {
+            disableButtons();
+
+            Users user = new Users();
+
+            txb_Response.Text = await user.AcceptWithdrawal(sessionToken, HFD_Pending_Withdrawals.userIdCouponsToAprove, "false");
+
+            enableButtons();
+        }
     }
 }
