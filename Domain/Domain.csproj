@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Coupons.cs" />
     <Compile Include="FileSystem.cs" />
+    <Compile Include="objects\AprovedWithdrawals.cs" />
     <Compile Include="objects\CouponsToCheckMonthly.cs" />
     <Compile Include="objects\LoginInfo.cs" />
     <Compile Include="objects\PendingWithdrawals.cs" />

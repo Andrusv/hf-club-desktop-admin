@@ -23,5 +23,21 @@ namespace Domain
                 return ex.ToString();
             }
         }
+
+        public async Task<String> getAprovedWithdrawals(String token)
+        {
+            String endpoint = "/api/withdrawals/aproved-withdrawals";
+            String body = "{}";
+            HttpMethod method = HttpMethod.Get;
+
+            try
+            {
+                return await Api.simpleRequest(endpoint, body, method, token);
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }

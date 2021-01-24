@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Domain;
+using Domain.objects;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +48,26 @@ namespace Presentation
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private async void HFD_Aproved_Withdrawals_LoadAsync(object sender, EventArgs e)
+        {
+            HFD_Inicio hfd_inicio = new HFD_Inicio();
+            Withdrawals withdrawals = new Withdrawals();
+
+            AprovedWithdrawals aprovedWithdrawals = JsonConvert.DeserializeObject<AprovedWithdrawals>(await withdrawals.getAprovedWithdrawals(hfd_inicio.loginInfo.jwt));
+
+            for (var i = 0; i < aprovedWithdrawals.aprovedWithdrawals.Length; i++)
+            {
+                var withdrawal_id = aprovedWithdrawals.aprovedWithdrawals[i].withdrawal_id;
+                var user_id = aprovedWithdrawals.aprovedWithdrawals[i].user_id;
+                var balance = aprovedWithdrawals.aprovedWithdrawals[i].balance;
+                var character_name = aprovedWithdrawals.aprovedWithdrawals[i].characterName;
+
+                String[] row = { withdrawal_id, user_id, balance.ToString(), character_name };
+
+                dgvAprovedWithdrawals.Rows.Add(row);
+            }
         }
     }
 }
