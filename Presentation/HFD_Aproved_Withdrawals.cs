@@ -26,6 +26,8 @@ namespace Presentation
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        private int totalAprovedWithdrawals;
+
         private void btnArrowBack_MouseDown(object sender, MouseEventArgs e)
         {
             btnArrowBack.Visible = false;
@@ -52,12 +54,13 @@ namespace Presentation
 
         private async void HFD_Aproved_Withdrawals_LoadAsync(object sender, EventArgs e)
         {
-            HFD_Inicio hfd_inicio = new HFD_Inicio();
-            Withdrawals withdrawals = new Withdrawals();
+                HFD_Inicio hfd_inicio = new HFD_Inicio();
+                Withdrawals withdrawals = new Withdrawals();
+                AprovedWithdrawals aprovedWithdrawals = JsonConvert.DeserializeObject<AprovedWithdrawals>(await withdrawals.getAprovedWithdrawals(hfd_inicio.loginInfo.jwt));
 
-            AprovedWithdrawals aprovedWithdrawals = JsonConvert.DeserializeObject<AprovedWithdrawals>(await withdrawals.getAprovedWithdrawals(hfd_inicio.loginInfo.jwt));
+            totalAprovedWithdrawals = aprovedWithdrawals.aprovedWithdrawals.Length;
 
-            for (var i = 0; i < aprovedWithdrawals.aprovedWithdrawals.Length; i++)
+            for (var i = 0; i < totalAprovedWithdrawals; i++)
             {
                 var checkBox = false;
                 var withdrawal_id = aprovedWithdrawals.aprovedWithdrawals[i].withdrawal_id;
@@ -89,6 +92,23 @@ namespace Presentation
             {
                 row.Cells["checkBox"].Value = "true";
             }
+        }
+
+        private async void btnPay_MouseUpAsync(object sender, MouseEventArgs e)
+        {
+            Withdrawals withdrawals = new Withdrawals();
+            HFD_Inicio hfd_inicio = new HFD_Inicio();
+            int counter = 0;
+
+            for (var i = 0; i < totalAprovedWithdrawals; i++)
+            {
+                if (dgvAprovedWithdrawals.Rows[i].Cells["checkBox"].Value.Equals("true"))
+                {
+                    var response = await withdrawals.aproveWithdrawals(hfd_inicio.loginInfo.jwt, Int32.Parse(dgvAprovedWithdrawals.Rows[i].Cells["withdrawal_id"].Value.ToString()));
+
+                    txtResponse.Text = txtResponse.Text + " / " + response;
+                }
+            }            
         }
     }
 }

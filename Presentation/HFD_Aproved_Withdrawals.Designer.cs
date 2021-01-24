@@ -42,6 +42,8 @@
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.character_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.txtResponse = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAprovedWithdrawals)).BeginInit();
@@ -113,13 +115,13 @@
             this.dgvAprovedWithdrawals.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAprovedWithdrawals.EnableHeadersVisualStyles = false;
             this.dgvAprovedWithdrawals.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dgvAprovedWithdrawals.Location = new System.Drawing.Point(15, 67);
+            this.dgvAprovedWithdrawals.Location = new System.Drawing.Point(15, 50);
             this.dgvAprovedWithdrawals.Name = "dgvAprovedWithdrawals";
             this.dgvAprovedWithdrawals.ReadOnly = true;
             this.dgvAprovedWithdrawals.RowHeadersVisible = false;
             this.dgvAprovedWithdrawals.RowTemplate.Height = 40;
             this.dgvAprovedWithdrawals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAprovedWithdrawals.Size = new System.Drawing.Size(451, 293);
+            this.dgvAprovedWithdrawals.Size = new System.Drawing.Size(451, 229);
             this.dgvAprovedWithdrawals.TabIndex = 35;
             this.dgvAprovedWithdrawals.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dgvAprovedWithdrawals.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -180,12 +182,40 @@
             this.character_Name.Name = "character_Name";
             this.character_Name.ReadOnly = true;
             // 
+            // btnPay
+            // 
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPay.FlatAppearance.BorderSize = 0;
+            this.btnPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPay.Location = new System.Drawing.Point(172, 340);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(133, 40);
+            this.btnPay.TabIndex = 36;
+            this.btnPay.Text = "PAY";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPay_MouseUpAsync);
+            // 
+            // txtResponse
+            // 
+            this.txtResponse.Enabled = false;
+            this.txtResponse.Location = new System.Drawing.Point(30, 285);
+            this.txtResponse.Multiline = true;
+            this.txtResponse.Name = "txtResponse";
+            this.txtResponse.Size = new System.Drawing.Size(436, 49);
+            this.txtResponse.TabIndex = 37;
+            // 
             // HFD_Aproved_Withdrawals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(478, 392);
+            this.Controls.Add(this.txtResponse);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.dgvAprovedWithdrawals);
             this.Controls.Add(this.btnArrowBack);
             this.Controls.Add(this.pctArrowBack);
@@ -214,5 +244,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
         private System.Windows.Forms.DataGridViewTextBoxColumn character_Name;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.TextBox txtResponse;
     }
 }

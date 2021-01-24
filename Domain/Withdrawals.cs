@@ -39,5 +39,21 @@ namespace Domain
                 return ex.ToString();
             }
         }
+
+        public async Task<String> aproveWithdrawals(String token, int withdrawal_id)
+        {
+            String endpoint = "/api/withdrawals/pay";
+            String body = $"{{\"withdrawal_id\":{withdrawal_id}}}";
+            HttpMethod method = HttpMethod.Post;
+
+            try
+            {
+                return await Api.simpleRequest(endpoint, body, method, token);
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }
