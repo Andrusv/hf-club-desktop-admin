@@ -37,6 +37,7 @@
             this.btnArrowBack = new System.Windows.Forms.PictureBox();
             this.pctArrowBack = new System.Windows.Forms.PictureBox();
             this.dgvAprovedWithdrawals = new Guna.UI.WinForms.GunaDataGridView();
+            this.checkBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.withdrawal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +98,7 @@
             this.dgvAprovedWithdrawals.ColumnHeadersHeight = 40;
             this.dgvAprovedWithdrawals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAprovedWithdrawals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checkBox,
             this.withdrawal_id,
             this.user_id,
             this.balance,
@@ -141,6 +143,13 @@
             this.dgvAprovedWithdrawals.ThemeStyle.RowsStyle.Height = 40;
             this.dgvAprovedWithdrawals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dgvAprovedWithdrawals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.LightGray;
+            this.dgvAprovedWithdrawals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAprovedWithdrawals_CellContentClick);
+            // 
+            // checkBox
+            // 
+            this.checkBox.HeaderText = "";
+            this.checkBox.Name = "checkBox";
+            this.checkBox.ReadOnly = true;
             // 
             // withdrawal_id
             // 
@@ -200,6 +209,7 @@
         private System.Windows.Forms.PictureBox btnArrowBack;
         private System.Windows.Forms.PictureBox pctArrowBack;
         private Guna.UI.WinForms.GunaDataGridView dgvAprovedWithdrawals;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn withdrawal_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;

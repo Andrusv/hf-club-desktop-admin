@@ -59,14 +59,35 @@ namespace Presentation
 
             for (var i = 0; i < aprovedWithdrawals.aprovedWithdrawals.Length; i++)
             {
+                var checkBox = false;
                 var withdrawal_id = aprovedWithdrawals.aprovedWithdrawals[i].withdrawal_id;
                 var user_id = aprovedWithdrawals.aprovedWithdrawals[i].user_id;
                 var balance = aprovedWithdrawals.aprovedWithdrawals[i].balance;
                 var character_name = aprovedWithdrawals.aprovedWithdrawals[i].characterName;
 
-                String[] row = { withdrawal_id, user_id, balance.ToString(), character_name };
+                String[] row = { checkBox.ToString(), withdrawal_id, user_id, balance.ToString(), character_name };
 
                 dgvAprovedWithdrawals.Rows.Add(row);
+            }
+        }
+
+        private void dgvAprovedWithdrawals_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvAprovedWithdrawals.CurrentRow;
+
+            if (row == null)
+            {
+                return;
+            }
+
+            HFD_Aprove_Coupons HFD_Aprove_Coupons = new HFD_Aprove_Coupons();
+
+            if (row.Cells["checkBox"].Value.Equals("true"))
+            {
+                row.Cells["checkBox"].Value = "false";
+            } else
+            {
+                row.Cells["checkBox"].Value = "true";
             }
         }
     }
