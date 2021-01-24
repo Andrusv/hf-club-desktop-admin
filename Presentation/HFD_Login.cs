@@ -124,5 +124,12 @@ namespace Presentation
             this.Hide();
             hfd_pending_withdrawals.Show();
         }
+
+        private void btnAprovedWithdrawals_Click(object sender, EventArgs e)
+        {
+            HFD_Aproved_Withdrawals hfd_aproved_withdrawals = new HFD_Aproved_Withdrawals();
+            this.Hide();
+            hfd_aproved_withdrawals.Show();
+        }
     }
 }

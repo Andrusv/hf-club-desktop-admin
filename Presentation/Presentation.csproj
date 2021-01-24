@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HFD_Aproved_Withdrawals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HFD_Aproved_Withdrawals.Designer.cs">
+      <DependentUpon>HFD_Aproved_Withdrawals.cs</DependentUpon>
+    </Compile>
     <Compile Include="HFD_Aprove_Coupons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HFD_Aproved_Withdrawals.resx">
+      <DependentUpon>HFD_Aproved_Withdrawals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HFD_Aprove_Coupons.resx">
       <DependentUpon>HFD_Aprove_Coupons.cs</DependentUpon>
     </EmbeddedResource>

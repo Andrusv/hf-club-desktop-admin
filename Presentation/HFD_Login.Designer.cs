@@ -260,6 +260,7 @@
             this.btnAprovedWithdrawals.TabIndex = 21;
             this.btnAprovedWithdrawals.Text = "RETIROS APROBADOS";
             this.btnAprovedWithdrawals.UseVisualStyleBackColor = false;
+            this.btnAprovedWithdrawals.Click += new System.EventHandler(this.btnAprovedWithdrawals_Click);
             // 
             // btnBanUser
             // 
