@@ -71,6 +71,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HFD_Aproved_Withdrawals";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HFD_Aproved_Withdrawals_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArrowBack)).EndInit();
             this.ResumeLayout(false);
